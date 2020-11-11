@@ -5,40 +5,28 @@
 import sys
 
 def parse_command_line(rawinput):
-    '''
-    parse_command_line takes the commandline
-    arguments of sys.argv.
 
-    It returns useful errors.
+    # Determine if the user input is wrong
+    if len(rawinput) > 2:
+        print("The input is incorrect")
+        sys.exit()
 
-    This command is executed from the commandline.
-    
-    For example:
-    python celsius.py 86
+    # The string is converted to florating
+    rawinput = float(rawinput[1])
 
-    Will print:
-    "86F is 30C"
+    # Convert the temperature
+    tmp = (rawinput - 32) / 1.8
 
-    A wrong case is a user typing too
-    many inputs.
-    python celsius.py 85 38
+    # Format the output
+    print("{}F is {}C".format(int(rawinput), int(tmp)))
 
-    This should return an error.
-
-    Can your code handle negative Fahrenheit values?
-    The raw input is a string.
-    How can we convert a string to a floating point
-        number?
-
-    Good luck!
-    '''
-    raise NotImplementedError
+    return tmp
 
 def calculate_celsius(degree_fahrenheit):
     '''
     Print conversion after parse.
     '''
-    raise NotImplementedError
+    print("{:.1f}C".format(degree_fahrenheit))
 
 if __name__ == "__main__":
     command_line_inputs = sys.argv

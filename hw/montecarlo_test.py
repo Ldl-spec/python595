@@ -16,7 +16,7 @@ import math
 if __name__ == "__main__":
     numerical_integrator = NumericalIntegrator()
 
-   numerical_integrator.set_objective( math.sin) # set objective function to evaluate.
+    numerical_integrator.set_objective(math.sin) # set objective function to evaluate.
 
     numerical_integrator.set_scenarios(1000) # use this many draws.
 
@@ -26,6 +26,3 @@ if __name__ == "__main__":
 
     upper_bound = 1.0
     print("second result", numerical_integrator.integrate( lower_bound, upper_bound))
-
-
-
